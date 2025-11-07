@@ -17,7 +17,7 @@ void addToHead(Node** head, int value)
         return;
     }
 
-    Node* newNode = new Node; // allocate memory.
+    Node* newNode = new Node;
     newNode->data = value;
     newNode->next = *head;
     *head = newNode;
@@ -27,27 +27,17 @@ void addToHead(Node** head, int value)
 void removeFromHead(Node** head)
 {
     if (*head == nullptr)
-    {
-        cout << "List is empty, nothing to remove." << endl;
         return;
-    }
 
     Node* temp = *head;
     *head = (*head)->next;
-	delete temp; // free memory
+    delete temp;
 }
 
-// Print all nodes in the list.
+// Print all nodes in the list
 void printList(const Node* head)
 {
-    if (head == nullptr)
-    {
-        cout << "List is empty." << endl;
-        return;
-    }
-
     const Node* current = head;
-    cout << "List elements: ";
     while (current != nullptr)
     {
         cout << current->data << " ";
@@ -56,7 +46,7 @@ void printList(const Node* head)
     cout << endl;
 }
 
-// Clear the list and free memory.
+// Clear the list and free memory
 void clearList(Node** head)
 {
     while (*head != nullptr)
